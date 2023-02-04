@@ -4,15 +4,15 @@
     "description": "Add a custom background to Google.com",
     "version": "1.0",
     "icons": {
-        "16": "/images/icon16-1.png",
-        "48": "/images/48-1.png",
-        "128": "/images/128-1.png"
+        "16": "/images/logo7T.png",
+        "48": "/images/logoT.png",
+        "128": "/images/logoT.png"
     },
     "page_action": {
         "default_icon": {
-            "16": "/images/icon16-2.png",
-            "48": "/images/48-2.png",
-            "128": "/images/128-2.png"
+            "16": "/images/logo7T.png",
+            "48": "/images/logoT.png",
+            "128": "/images/logoT.png"
 
         }
     },
