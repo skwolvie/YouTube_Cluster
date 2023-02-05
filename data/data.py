@@ -3,7 +3,7 @@ import json
 import pandas
 import itertools
 
-channel_ids = ["UCzIO0iX4yKW2P4NkmmKq1PA"]
+channel_ids = ["UCzIO0iX4yKW2P4NkmmKq1PA","UCvpfclapgcuJo0M_x65pfRw"]
 API_KEY = "AIzaSyDIpDWDr-KkwYUMpaC1bbXBIhNn0EtAE48"
 
 for y,channel_id in enumerate(channel_ids):

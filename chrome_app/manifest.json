@@ -1,24 +1,13 @@
 {
-    "manifest_version": 2,
-    "name":"iEatBackground",
-    "description": "Add a custom background to Google.com",
-    "version": "1.0",
-    "icons": {
-        "16": "/images/logo7T.png",
-        "48": "/images/logoT.png",
-        "128": "/images/logoT.png"
-    },
-    "page_action": {
-        "default_icon": {
-            "16": "/images/logo7T.png",
-            "48": "/images/logoT.png",
-            "128": "/images/logoT.png"
-
-        }
-    },
-    "content_scripts": [{
-        "matches": ["https://www.google.com/*"],
-        "css": ["main.css"]
-
-    }]
+  "manifest_version": 2,
+  "name": "Subscat",
+  "description": "A simple extension that demonstrates how to sign in with Google",
+  "version": "1.0",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab","https://*.google.com/*",
+    "identity"
+  ]
 }
