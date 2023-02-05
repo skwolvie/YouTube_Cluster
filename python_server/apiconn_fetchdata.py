@@ -5,11 +5,13 @@ import google_auth_oauthlib.flow
 import googleapiclient.discovery
 
 api_key= "AIzaSyB4JJHQzYe3uT8KkyVO1L1V9iNl15LINrk"
+api_service_name = "youtube"
+api_version = "v3"
+client_secrets_file = "../secrets/client_secret.json"
 
 def get_youtube_credentials():
     scopes = ["https://www.googleapis.com/auth/youtube.readonly"]
-    client_secrets_file = "sachinsm2022.json"
-
+    client_secrets_file = "../secrets/client_secret.json"
     flow = google_auth_oauthlib.flow.InstalledAppFlow.from_client_secrets_file(client_secrets_file, scopes)
     credentials = flow.run_console()
     
@@ -50,7 +52,7 @@ def write_video_metadata_to_csv(channel_ids, api_key):
             part='id',
             type='video',
             channelId=channel_id,
-            maxResults=20  # Maximum allowed results per request
+            maxResults=50  # Maximum allowed results per request
         )
 
         response = request.execute()
@@ -78,12 +80,18 @@ def write_video_metadata_to_csv(channel_ids, api_key):
 
                 # Check if there are more videos to retrieve
                 request = youtube.search().list_next(request, response)
-                df = pd.DataFrame(video_metadata)
-                df.to_csv('youtube_video_metadata_part.csv', index=False)
         except:
               df = pd.DataFrame(video_metadata)
-              df.to_csv('youtube_video_metadata.csv', index=False)
+              df.to_csv('video_metadata.csv', index=False)
 
     df = pd.DataFrame(video_metadata)
-    df.to_csv('youtube_video_metadata.csv', index=False)
+    df.to_csv('video_metadata.csv', index=False)
     return df
+
+credentials= get_youtube_credentials()
+youtube = googleapiclient.discovery.build(api_service_name, api_version, credentials=credentials)
+#df= get_subscribed_channels(youtube)
+#channel_ids=df['channel_id'].tolist()
+#write_video_metadata_to_csv(channel_ids, api_key)
+print('apiconn done')
+print('fetchdata done')
