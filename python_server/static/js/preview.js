@@ -1,6 +1,6 @@
 const API_KEY = "AIzaSyB4JJHQzYe3uT8KkyVO1L1V9iNl15LINrk";
-
 const cluster = decodeURIComponent(window.location.search.substring(1).split("=")[1]);
+
 const data = [{'cluster_name': 'bloomberg, news, bitcoin, economy, economics',
 'links': ['https://www.youtube.com/channel/UC6-URUKHVmFWSt_KdRsX8UA',
  'https://www.youtube.com/channel/UCGBoWe1mzCvbbqDNncmxm8A',
@@ -418,3 +418,4 @@ links.forEach(async link => {
     li.appendChild(p);
     previewList.appendChild(li);
 });
+
