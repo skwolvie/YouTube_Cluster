@@ -1,4 +1,4 @@
-secrets/
-data/
-code_notebooks/
-chromeapp/
+secrets/*
+data/*
+code_notebooks/*
+chromeapp/*
