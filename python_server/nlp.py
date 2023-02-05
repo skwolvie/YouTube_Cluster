@@ -37,7 +37,7 @@ for sentence_id, cluster_id in enumerate(cluster_assignment):
     clustered_sentences[cluster_id].append(corpus[sentence_id])
 
 df['cluster']=cluster_assignment
-df['cluster'].value_counts()
+print(df['cluster'].value_counts())
 
 # Generate a name for the cluster labels
 tfidf = TfidfVectorizer(stop_words='english')
